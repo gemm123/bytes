@@ -67,3 +67,20 @@ func (ctr *controllerUser) Login(c *gin.Context) {
 		"token":   token,
 	})
 }
+
+func (ctr *controllerUser) User(c *gin.Context) {
+	userID := c.MustGet("userID").(string)
+
+	user, err := ctr.serviceUser.GetUser(userID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"data":    user,
+	})
+}

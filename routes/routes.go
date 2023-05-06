@@ -2,6 +2,7 @@ package routes
 
 import (
 	"github.com/gemm123/bytes/controller"
+	"github.com/gemm123/bytes/middleware"
 	"github.com/gemm123/bytes/repository"
 	"github.com/gemm123/bytes/service"
 	"github.com/gin-gonic/gin"
@@ -20,6 +21,7 @@ func InitRoutes(db *gorm.DB) *gin.Engine {
 	auth := api.Group("/auth")
 	auth.POST("/register", userController.Register)
 	auth.POST("/login", userController.Login)
+	auth.POST("/user", middleware.CheckAuthorization(), userController.User)
 
 	return route
 }

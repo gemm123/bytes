@@ -12,6 +12,7 @@ type repositoryUser struct {
 type RepositoryUser interface {
 	CreateUser(user models.User) error
 	FindUserByEmail(email string) (models.User, error)
+	FindUserByID(userID string) (models.User, error)
 }
 
 func NewRepositoryUser(DB *gorm.DB) *repositoryUser {
@@ -26,5 +27,11 @@ func (r *repositoryUser) CreateUser(user models.User) error {
 func (r *repositoryUser) FindUserByEmail(email string) (models.User, error) {
 	var user models.User
 	err := r.DB.Where("email = ?", email).First(&user).Error
+	return user, err
+}
+
+func (r *repositoryUser) FindUserByID(userID string) (models.User, error) {
+	var user models.User
+	err := r.DB.Where("id = ?", userID).First(&user).Error
 	return user, err
 }
