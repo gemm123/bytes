@@ -36,3 +36,34 @@ func (ctr *controllerUser) Register(c *gin.Context) {
 		"message": "register success",
 	})
 }
+
+func (ctr *controllerUser) Login(c *gin.Context) {
+	var input models.Login
+	if err := c.ShouldBindJSON(&input); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	err := ctr.serviceUser.CheckAccount(input)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"message": "failed " + err.Error(),
+		})
+		return
+	}
+
+	token, err := ctr.serviceUser.GenerateToken(input)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed " + err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"token":   token,
+	})
+}

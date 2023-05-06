@@ -19,6 +19,7 @@ func InitRoutes(db *gorm.DB) *gin.Engine {
 
 	auth := api.Group("/auth")
 	auth.POST("/register", userController.Register)
+	auth.POST("/login", userController.Login)
 
 	return route
 }
