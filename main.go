@@ -29,7 +29,7 @@ func main() {
 	fmt.Println("connected to database")
 	defer database.CloseDB(db)
 
-	route := routes.InitRoutes()
+	route := routes.InitRoutes(db)
 
 	route.Run()
 }
