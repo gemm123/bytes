@@ -38,6 +38,23 @@ type Summary struct {
 	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey"`
 	CourseId string `gorm:"type:uuid"`
 	Place    int
-	Title    string
 	Text     string
+}
+
+type CourseToML struct {
+	UserId         string
+	CourseId       string
+	UserLikeCourse bool
+	Title          string
+	Description    string
+	Tag            []string
+	Summary        string
+}
+
+type CourseMaterial struct {
+	CourseId    string `gorm:"column:course_id"`
+	Title       string `gorm:"column:title"`
+	Description string `gorm:"column:description"`
+	Tag         string `gorm:"column:tag"`
+	Summary     string `gorm:"column:summary"`
 }
