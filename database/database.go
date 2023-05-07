@@ -9,8 +9,7 @@ import (
 func InitDB(dsn string) (*gorm.DB, error) {
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
-	db.AutoMigrate(&models.User{})
-	db.AutoMigrate(&models.Course{})
+	db.AutoMigrate(&models.User{}, &models.Course{}, &models.Material{}, &models.Quiz{}, &models.Summary{})
 	db.AutoMigrate(&models.UserLikeCourse{})
 
 	return db, err
