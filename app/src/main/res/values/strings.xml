@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Bytes</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="title_profile">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_content">Course or Flashcards</string>
+    <string name="sample_title">Python Dasar untuk Pemula</string>
+    <string name="sample_category">Kategori</string>
+    <string name="sample_desc_course">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada lorem vel enim maximus, ut euismod tortor bibendum.</string>
+    <string name="mulai_belajar">Mulai Belajar</string>
+    <string name="back">Back</string>
+    <string name="register">Register</string>
+    <string name="register_description"><![CDATA[Selamat datang di <b>Bytes</b>, silahkan lakukan pendaftaran untuk memulai!]]></string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="login_desc"><![CDATA[Selamat datang di <b>Bytes</b>, silahkan login untuk memulai perjalan bersama kami!]]></string>
+    <string name="material_1_title">Judul materi 1</string>
+    <string name="sample_material_1">Python adalah bahasa pemrograman interpretatif, tingkat tinggi dan mudah dipelajari yang digunakan untuk membangun berbagai jenis aplikasi seperti web, game, desktop, dan mobile.\n\nPython dikembangkan pada tahun 1980-an oleh Guido van Rossum, dan merupakan salah satu bahasa pemrograman yang paling populer di dunia saat ini.</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="material_2_title">Judul materi 2</string>
+    <string name="sample_material_2">Python menggunakan indentasi whitespace untuk menunjukkan blok kode Pernyataan di Python diakhiri dengan titik dua (:) Komentar dimulai dengan tanda pagar (#)\n\nprint() adalah fungsi bawaan dalam bahasa pemrograman Python yang digunakan untuk menampilkan atau mencetak output ke layar atau konsol.</string>
+    <string name="sample_material_2_2">Ketika kode di atas dijalankan, maka output yang dihasilkan adalah \"Hello, World!\" yang ditampilkan di konsol.</string>
+    <string name="quiz">Kuis</string>
+    <string name="sample_question">Fungsi bawaan python yang digunakan untuk menampilkan atau mencetak output ke layar adalah?</string>
+    <string name="sample_answer_1">print()</string>
+    <string name="sample_answer_2">def()</string>
+    <string name="selesai">Selesai</string>
+    <string name="summary_title">Apa yang telah kamu pelajari</string>
+    <string name="sample_summary">Python adalah bahasa pemrograman interpretatif, tingkat tinggi dan mudah dipelajari yang digunakan untuk membangun berbagai jenis aplikasi seperti web, game, desktop, dan mobile. Syntax Dasar Python menggunakan indentasi whitespace untuk menunjukkan blok kode Pernyataan di Python diakhiri dengan titik dua (:) Komentar dimulai dengan tanda pagar (#) Fungsi Fungsi didefinisikan menggunakan kata kunci def dan dapat mengambil argumen</string>
+</resources>
