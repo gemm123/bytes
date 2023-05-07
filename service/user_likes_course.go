@@ -11,6 +11,7 @@ type serviceUserCourse struct {
 
 type ServiceUserCourse interface {
 	Like(userId, courseId string) error
+	DeleteLike(userId, courseId string) error
 }
 
 func NewServiceUserCourse(repositoryUserCourse repository.RepositoryUserCourse) *serviceUserCourse {
@@ -28,4 +29,23 @@ func (s *serviceUserCourse) Like(userId, courseId string) error {
 	err := s.repositoryUserCourse.Insert(userLikeCourse)
 
 	return err
+}
+
+func (s *serviceUserCourse) DeleteLike(userId, courseId string) error {
+	userLikeCourse := models.UserLikeCourse{
+		UserId:   userId,
+		CourseId: courseId,
+	}
+
+	_, err := s.repositoryUserCourse.FindLike(userLikeCourse)
+	if err != nil {
+		return err
+	}
+
+	err = s.repositoryUserCourse.Delete(userLikeCourse)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

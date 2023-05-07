@@ -27,8 +27,9 @@ func InitRoutes(db *gorm.DB) *gin.Engine {
 	auth.POST("/login", userController.Login)
 	auth.POST("/user", middleware.CheckAuthorization(), userController.User)
 
-	like := api.Group("")
-	like.POST("/like/:courseId", middleware.CheckAuthorization(), userCoruseController.Like)
+	like := api.Group("/like")
+	like.POST("/:courseId", middleware.CheckAuthorization(), userCoruseController.Like)
+	like.DELETE("/:courseId", middleware.CheckAuthorization(), userCoruseController.DeleteLike)
 
 	return route
 }
