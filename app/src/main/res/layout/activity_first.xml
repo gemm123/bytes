@@ -56,6 +56,7 @@
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_course_banner"/>
 
@@ -65,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sample_material_1"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_material_1_title"
@@ -85,6 +87,7 @@
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:background="@color/main_color"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

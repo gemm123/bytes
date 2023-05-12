@@ -46,6 +46,7 @@
             android:textStyle="bold"
             android:textSize="24sp"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -57,6 +58,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_quiz"/>
@@ -80,6 +82,7 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:button="@null"
+                    android:fontFamily="@font/inter_regular"
                     android:background="@drawable/answer_radio_button"/>
 
                 <RadioButton
@@ -92,6 +95,7 @@
                     android:textSize="16sp"
                     android:button="@null"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/inter_regular"
                     android:background="@drawable/answer_radio_button"/>
 
             </RadioGroup>
@@ -109,7 +113,8 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textAllCaps="false"
-        android:background="@color/main_color"
+        android:background="@drawable/main_color_rounded_corner"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

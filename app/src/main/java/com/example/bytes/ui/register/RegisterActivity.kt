@@ -47,10 +47,10 @@ class RegisterActivity : AppCompatActivity() {
                 if (message != null) {
                     val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                     startActivity(intent)
+                    finishAffinity()
                     finish()
                 }
             }
-//            Toast.makeText(this@RegisterActivity, email, Toast.LENGTH_SHORT).show()
         }
         binding.btnBack.setOnClickListener {
             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)

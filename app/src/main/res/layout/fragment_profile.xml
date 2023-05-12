@@ -7,15 +7,17 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/text_profile"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:text="@string/log_out"
+        android:background="@drawable/main_color_rounded_corner"
         android:textSize="20sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="32dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

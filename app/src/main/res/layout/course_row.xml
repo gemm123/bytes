@@ -25,6 +25,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="24sp"
+        android:fontFamily="@font/inter_bold"
         android:justificationMode="inter_word"
         android:layout_marginTop="12dp"/>
 
@@ -38,6 +39,7 @@
         android:layout_marginTop="12dp"
         android:paddingHorizontal="8dp"
         android:paddingVertical="4dp"
+        android:fontFamily="@font/inter_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title_course"/>
 
@@ -51,6 +53,7 @@
         android:layout_margin="12dp"
         android:paddingHorizontal="8dp"
         android:paddingVertical="4dp"
+        android:fontFamily="@font/inter_regular"
         app:layout_constraintStart_toEndOf="@id/tv_category_1"
         app:layout_constraintTop_toBottomOf="@id/tv_title_course"/>
 
@@ -64,6 +67,7 @@
         android:layout_margin="12dp"
         android:paddingHorizontal="8dp"
         android:paddingVertical="4dp"
+        android:fontFamily="@font/inter_regular"
         app:layout_constraintStart_toEndOf="@id/tv_category_2"
         app:layout_constraintTop_toBottomOf="@id/tv_title_course"/>
 
@@ -75,6 +79,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_category_1"/>
 
@@ -82,12 +87,13 @@
         android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/main_color"
+        android:background="@drawable/main_color_rounded_corner"
         android:text="@string/mulai_belajar"
         android:textSize="18sp"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
