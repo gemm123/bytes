@@ -26,6 +26,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintStart_toEndOf="@id/btn_back"
         app:layout_constraintTop_toTopOf="@id/btn_back"
         app:layout_constraintBottom_toBottomOf="@id/btn_back"/>
@@ -48,6 +49,7 @@
         android:layout_marginTop="12dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_register_description"/>
 
@@ -76,6 +78,7 @@
         android:layout_marginTop="12dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_layout"/>
 
@@ -104,6 +107,7 @@
         android:layout_marginTop="12dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username_layout"/>
 
@@ -136,7 +140,8 @@
         android:textSize="18sp"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:background="@color/main_color"
+        android:fontFamily="@font/inter_bold"
+        android:background="@drawable/main_color_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

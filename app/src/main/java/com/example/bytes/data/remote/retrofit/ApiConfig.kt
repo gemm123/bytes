@@ -1,4 +1,4 @@
-package com.example.bytes.data.model
+package com.example.bytes.data.remote.retrofit
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

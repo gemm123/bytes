@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
-import com.example.bytes.MainActivity
+import com.example.bytes.ui.main.MainActivity
 import com.example.bytes.databinding.ActivityQuizBinding
 import com.example.bytes.ui.home.course.material.summary.SummaryActivity
 

@@ -3,7 +3,7 @@ package com.example.bytes.ui.home.course.material.summary
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bytes.MainActivity
+import com.example.bytes.ui.main.MainActivity
 import com.example.bytes.databinding.ActivitySummaryBinding
 
 class SummaryActivity : AppCompatActivity() {
