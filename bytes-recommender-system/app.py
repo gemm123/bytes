@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/get_recommendation', methods=['POST'])
+@app.route('/get-recommendation', methods=['POST'])
 def get_recommendation():
     json_data = request.get_json()
     # Preprocess the data
