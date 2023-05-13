@@ -1,4 +1,4 @@
-# Bytes Hybrid Recommender System Algorithm
+# BytesForYou: Bytes Hybrid Recommender System Algorithm
 
 **Sistem Rekomendasi Hybrid Bytes** menggabungkan model `content-based` dan `collaborative filtering` untuk memberikan **rekomendasi yang personal untuk pengguna**.
 
