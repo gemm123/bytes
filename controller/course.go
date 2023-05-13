@@ -113,3 +113,20 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 		"data":    coursesToMobile,
 	})
 }
+
+func (ctr *controllerCourse) GetMaterialByCourseId(c *gin.Context) {
+	courseId := c.Param("courseId")
+
+	material, err := ctr.serviceCourse.GetMaterialByCourseId(courseId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"data":    material,
+	})
+}

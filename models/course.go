@@ -17,12 +17,12 @@ type Course struct {
 }
 
 type Material struct {
-	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey"`
-	CourseId string `gorm:"type:uuid"`
-	Place    int
-	Title    string
-	Image    string
-	Text     string
+	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey" json:"id"`
+	CourseId string `gorm:"type:uuid" json:"courseId"`
+	Place    int    `json:"place"`
+	Title    string `json:"title"`
+	Image    string `json:"image"`
+	Text     string `json:"text"`
 }
 
 type Quiz struct {

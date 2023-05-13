@@ -13,6 +13,7 @@ type RepositoryCourse interface {
 	GetAllCourse() ([]models.Course, error)
 	GetAllCourseMaterial() ([]models.CourseMaterial, error)
 	GetCourseById(courseId string) (models.Course, error)
+	GetMaterialByCourseId(courseId string) (models.Material, error)
 }
 
 func NewRepositoryCourse(DB *gorm.DB) *repositoryCourse {
@@ -39,4 +40,10 @@ func (r *repositoryCourse) GetCourseById(courseId string) (models.Course, error)
 	var course models.Course
 	err := r.DB.Where("id = ?", courseId).First(&course).Error
 	return course, err
+}
+
+func (r *repositoryCourse) GetMaterialByCourseId(courseId string) (models.Material, error) {
+	var material models.Material
+	err := r.DB.Where("course_id = ?", courseId).First(&material).Error
+	return material, err
 }
