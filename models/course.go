@@ -42,13 +42,17 @@ type Summary struct {
 }
 
 type CourseToML struct {
-	UserId         string
-	CourseId       string
-	UserLikeCourse bool
-	Title          string
-	Description    string
-	Tag            []string
-	Summary        string
+	UserId         string   `json:"userId"`
+	CourseId       string   `json:"courseId"`
+	UserLikeCourse bool     `json:"userLikeCourse"`
+	Title          string   `json:"title"`
+	Description    string   `json:"description"`
+	Tag            []string `json:"tag"`
+	Summary        string   `json:"summary"`
+}
+
+type SendCourseToML struct {
+	Data []CourseToML `json:"data"`
 }
 
 type CourseMaterial struct {

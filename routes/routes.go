@@ -11,6 +11,7 @@ import (
 
 func InitRoutes(db *gorm.DB) *gin.Engine {
 	route := gin.Default()
+	route.Static("/image", "./src/images")
 
 	userRepository := repository.NewRepositoryUser(db)
 	userService := service.NewServiceUser(userRepository)

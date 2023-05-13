@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"encoding/json"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -47,6 +49,20 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 		coursesToML[i].Tag = append(coursesToML[i].Tag, tags...)
 		coursesToML[i].Summary = courseMaterial.Summary
 	}
+
+	sendCourseToML := models.SendCourseToML{
+		Data: coursesToML,
+	}
+
+	jsonCourseToML, err := json.Marshal(sendCourseToML)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	fmt.Println(string(jsonCourseToML))
 
 	c.JSON(http.StatusOK, gin.H{
 		"message": "success",
