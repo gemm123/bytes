@@ -14,6 +14,7 @@ type ServiceCourse interface {
 	GetAllCourseMaterial() ([]models.CourseMaterial, error)
 	GetRecommendCourseForMobile(coursesRecommendation []models.CourseFromML) ([]models.Course, error)
 	GetMaterialByCourseId(courseId string) (models.Material, error)
+	GetQuizByCourseId(courseId string) (models.Quiz, error)
 }
 
 func NewServiceCourse(repositoryCourse repository.RepositoryCourse) *serviceCourse {
@@ -55,4 +56,9 @@ func (s *serviceCourse) GetRecommendCourseForMobile(coursesRecommendation []mode
 func (s *serviceCourse) GetMaterialByCourseId(courseId string) (models.Material, error) {
 	material, err := s.repositoryCourse.GetMaterialByCourseId(courseId)
 	return material, err
+}
+
+func (s *serviceCourse) GetQuizByCourseId(courseId string) (models.Quiz, error) {
+	quiz, err := s.repositoryCourse.GetQuizByCourseId(courseId)
+	return quiz, err
 }
