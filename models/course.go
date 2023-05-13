@@ -42,17 +42,22 @@ type Summary struct {
 }
 
 type CourseToML struct {
-	UserId         string   `json:"userId"`
-	CourseId       string   `json:"courseId"`
-	UserLikeCourse bool     `json:"userLikeCourse"`
-	Title          string   `json:"title"`
-	Description    string   `json:"description"`
-	Tag            []string `json:"tag"`
-	Summary        string   `json:"summary"`
+	UserId         string
+	CourseId       string
+	UserLikeCourse bool
+	Title          string
+	Description    string
+	Tag            string
+	Summary        string
 }
 
 type SendCourseToML struct {
 	Data []CourseToML `json:"data"`
+}
+
+type CourseFromML struct {
+	CourseId string
+	Title    string
 }
 
 type CourseMaterial struct {
@@ -61,4 +66,12 @@ type CourseMaterial struct {
 	Description string `gorm:"column:description"`
 	Tag         string `gorm:"column:tag"`
 	Summary     string `gorm:"column:summary"`
+}
+
+type CourseToMobile struct {
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	Thumbnail   string `json:"thumbnail"`
+	Tag         string `json:"tag"`
+	UserLike    bool   `json:"userLike"`
 }

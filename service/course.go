@@ -12,6 +12,7 @@ type serviceCourse struct {
 type ServiceCourse interface {
 	GetAllCourse() ([]models.Course, error)
 	GetAllCourseMaterial() ([]models.CourseMaterial, error)
+	GetRecommendCourseForMobile(coursesRecommendation []models.CourseFromML) ([]models.Course, error)
 }
 
 func NewServiceCourse(repositoryCourse repository.RepositoryCourse) *serviceCourse {
@@ -36,4 +37,16 @@ func (s *serviceCourse) GetAllCourseMaterial() ([]models.CourseMaterial, error) 
 	}
 
 	return courseMaterials, nil
+}
+
+func (s *serviceCourse) GetRecommendCourseForMobile(coursesRecommendation []models.CourseFromML) ([]models.Course, error) {
+	var courseResponse []models.Course
+	for _, courseRecommendation := range coursesRecommendation {
+		course, err := s.repositoryCourse.GetCourseById(courseRecommendation.CourseId)
+		if err != nil {
+			return nil, err
+		}
+		courseResponse = append(courseResponse, course)
+	}
+	return courseResponse, nil
 }

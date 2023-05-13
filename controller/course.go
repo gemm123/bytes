@@ -1,10 +1,10 @@
 package controller
 
 import (
+	"bytes"
 	"encoding/json"
-	"fmt"
+	"log"
 	"net/http"
-	"strings"
 
 	"github.com/gemm123/bytes/models"
 	"github.com/gemm123/bytes/service"
@@ -34,7 +34,6 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 	coursesToML := make([]models.CourseToML, len(courseMaterials))
 
 	for i, courseMaterial := range courseMaterials {
-		tags := strings.Split(courseMaterial.Tag, ",")
 
 		ok, _ := ctr.serviceUserCourse.CheckLike(userId, courseMaterial.CourseId)
 
@@ -46,7 +45,7 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 		coursesToML[i].CourseId = courseMaterial.CourseId
 		coursesToML[i].Title = courseMaterial.Title
 		coursesToML[i].Description = courseMaterial.Description
-		coursesToML[i].Tag = append(coursesToML[i].Tag, tags...)
+		coursesToML[i].Tag = courseMaterial.Tag
 		coursesToML[i].Summary = courseMaterial.Summary
 	}
 
@@ -62,10 +61,54 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 		return
 	}
 
-	fmt.Println(string(jsonCourseToML))
+	req, err := http.NewRequest("POST", "http://103.67.186.184:5000/get-recommendation", bytes.NewBuffer(jsonCourseToML))
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+
+	client := http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	var coursesFromML []models.CourseFromML
+	if err := json.NewDecoder(resp.Body).Decode(&coursesFromML); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	courseResponse, err := ctr.serviceCourse.GetRecommendCourseForMobile(coursesFromML)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	coursesToMobile := make([]models.CourseToMobile, len(courseResponse))
+	for i, cr := range courseResponse {
+		ok, _ := ctr.serviceUserCourse.CheckLike(userId, cr.Id.String())
+		if ok {
+			coursesToMobile[i].UserLike = true
+		}
+
+		coursesToMobile[i].Title = cr.Title
+		coursesToMobile[i].Description = cr.Description
+		coursesToMobile[i].Thumbnail = cr.Thumbnail
+		coursesToMobile[i].Tag = cr.Tag
+	}
 
 	c.JSON(http.StatusOK, gin.H{
 		"message": "success",
-		"data":    coursesToML,
+		"data":    coursesToMobile,
 	})
 }

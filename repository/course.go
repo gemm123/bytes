@@ -12,6 +12,7 @@ type repositoryCourse struct {
 type RepositoryCourse interface {
 	GetAllCourse() ([]models.Course, error)
 	GetAllCourseMaterial() ([]models.CourseMaterial, error)
+	GetCourseById(courseId string) (models.Course, error)
 }
 
 func NewRepositoryCourse(DB *gorm.DB) *repositoryCourse {
@@ -32,4 +33,10 @@ func (r *repositoryCourse) GetAllCourseMaterial() ([]models.CourseMaterial, erro
 		on c.id = s.course_id`
 	err := r.DB.Raw(query).Scan(&courseMaterials).Error
 	return courseMaterials, err
+}
+
+func (r *repositoryCourse) GetCourseById(courseId string) (models.Course, error) {
+	var course models.Course
+	err := r.DB.Where("id = ?", courseId).First(&course).Error
+	return course, err
 }
