@@ -12,9 +12,6 @@ import com.example.bytes.databinding.FragmentBookmarkBinding
 class BookmarkFragment : Fragment() {
 
     private var _binding: FragmentBookmarkBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,11 +24,6 @@ class BookmarkFragment : Fragment() {
 
         _binding = FragmentBookmarkBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

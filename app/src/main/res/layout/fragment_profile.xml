@@ -3,10 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_under_construction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/under_construction"
+        android:textSize="16sp"
+        android:textColor="@color/main_color"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_logout"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
