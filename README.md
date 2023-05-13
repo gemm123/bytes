@@ -1,5 +1,3 @@
-Berikut adalah contoh README.md untuk tech stack yang digunakan:
-
 # Tech Stack
 
 Aplikasi ini dibangun menggunakan teknologi-teknologi berikut:
