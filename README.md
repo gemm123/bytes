@@ -3,7 +3,7 @@
 **Sistem Rekomendasi Hybrid Bytes** menggabungkan model `content-based` dan `collaborative filtering` untuk memberikan **rekomendasi yang personal untuk pengguna**.
 
 * `content_based_model`, menggunakan kelas `TfidfVectorizer` dari pustaka 
-`sklearn` untuk mengonversi fitur teks dari setiap kursus (judul, deskripsi, tag, dan ringkasan) menjadi vektor numerik menggunakan fungsi "indo_analyzer" sebagai pengolah. Kemudian, ia **mengembalikan vectorizer yang telah dilatih dan matriks fitur yang telah diubah**.
+`sklearn` untuk mengonversi fitur teks dari setiap kursus (judul, deskripsi, tag, dan ringkasan) menjadi vektor numerik menggunakan fungsi `indo_analyzer` (note: untuk saat ini tidak digunakan karena pertimbangan waktu response) sebagai pengolah. Kemudian, ia **mengembalikan vectorizer yang telah dilatih dan matriks fitur yang telah diubah**.
 
 * `collaborative_filtering_model` mendefinisikan algoritma `SVD` dari pustaka `surprise` sebagai model `collaborative filtering` dan melatihnya pada set pelatihan yang diberikan menggunakan metode `fit`. Kemudian, ia **mengembalikan model yang telah dilatih**.
 
