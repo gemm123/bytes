@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.course.material.MaterialActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -22,19 +25,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.home.course.material.summary.SummaryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.course.material.quiz.QuizActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.course.material.second.SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.course.material.first.FirstActivity"
-            android:exported="true">
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"

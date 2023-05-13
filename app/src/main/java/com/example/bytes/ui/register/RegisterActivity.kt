@@ -59,10 +59,6 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun userRegister(user: RegisterDataClass) {
-
-    }
-
     private fun setupUI() {
         binding.tvRegisterDescription.setText(Html.fromHtml(getString(R.string.register_description)))
     }
