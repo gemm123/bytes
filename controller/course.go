@@ -101,6 +101,7 @@ func (ctr *controllerCourse) GetCourses(c *gin.Context) {
 			coursesToMobile[i].UserLike = true
 		}
 
+		coursesToMobile[i].Id = cr.Id.String()
 		coursesToMobile[i].Title = cr.Title
 		coursesToMobile[i].Description = cr.Description
 		coursesToMobile[i].Thumbnail = cr.Thumbnail
