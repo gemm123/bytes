@@ -26,19 +26,19 @@ type Material struct {
 }
 
 type Quiz struct {
-	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey"`
-	CourseId string `gorm:"type:uuid"`
-	Place    int
-	Question string
-	Choice   string
-	Key      string
+	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey" json:"id"`
+	CourseId string `gorm:"type:uuid" json:"courseId"`
+	Place    int    `json:"place"`
+	Question string `json:"question"`
+	Choice   string `json:"choice"`
+	Key      string `json:"key"`
 }
 
 type Summary struct {
-	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey"`
-	CourseId string `gorm:"type:uuid"`
-	Place    int
-	Text     string
+	Id       string `gorm:"type:uuid;default:gen_random_uuid();primaryKey" json:"id"`
+	CourseId string `gorm:"type:uuid" json:"courseId"`
+	Place    int    `json:"place"`
+	Text     string `json:"text"`
 }
 
 type CourseToML struct {

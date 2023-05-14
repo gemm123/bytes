@@ -147,3 +147,20 @@ func (ctr *controllerCourse) GetQuizByCourseId(c *gin.Context) {
 		"data":    quiz,
 	})
 }
+
+func (ctr *controllerCourse) GetSummaryByCourseId(c *gin.Context) {
+	courseId := c.Param("courseId")
+
+	summary, err := ctr.serviceCourse.GetSummaryByCourseId(courseId)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "failed: " + err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"data":    summary,
+	})
+}

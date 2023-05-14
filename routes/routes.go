@@ -40,6 +40,7 @@ func InitRoutes(db *gorm.DB) *gin.Engine {
 	course.GET("/", middleware.CheckAuthorization(), courseController.GetCourses)
 	course.GET("/material/:courseId", middleware.CheckAuthorization(), courseController.GetMaterialByCourseId)
 	course.GET("/quiz/:courseId", middleware.CheckAuthorization(), courseController.GetQuizByCourseId)
+	course.GET("/summary/:courseId", middleware.CheckAuthorization(), courseController.GetSummaryByCourseId)
 
 	return route
 }
