@@ -1,7 +1,4 @@
-# Tech Stack
-
 Aplikasi ini dibangun menggunakan teknologi-teknologi berikut:
-
 - Bahasa Pemrograman: Kotlin
 - Integrated Development Environment (IDE): Android Studio
 - API: RESTful API
@@ -19,6 +16,14 @@ Android Studio adalah Integrated Development Environment (IDE) resmi untuk penge
 RESTful API adalah sebuah arsitektur pengembangan web yang digunakan untuk membangun layanan web yang dapat diakses melalui protokol HTTP. RESTful API sering digunakan dalam pengembangan aplikasi mobile untuk menyediakan data dan layanan.
 
 ## Fitur aplikasi
+
 1. Register
 2. Login
 3. Home: Course - Material
+
+## Panduan menjalankan
+
+1. Clone repository ini atau download melalui zip
+2. Buka aplikasi Android Studio
+3. Import file yang sudah didownload atau diclone
+4. Build aplikasinya ke perangkat android atau emulator
