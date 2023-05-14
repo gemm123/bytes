@@ -6,28 +6,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.course.CourseFragment">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_materi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Materi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/course_row"
-        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-
+    <TextView
+        android:id="@+id/tv_see_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/see_more"
+        android:textColor="@color/main_color"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

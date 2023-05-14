@@ -25,14 +25,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/sample_image_banner"
                 android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv_material_1_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/material_1_title"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="24sp"
@@ -45,7 +43,6 @@
                 android:id="@+id/tv_material_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sample_material_1"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/inter_regular"
                 app:layout_constraintStart_toStartOf="parent"

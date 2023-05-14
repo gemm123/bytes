@@ -34,4 +34,5 @@
     <string name="sample_summary">Python adalah bahasa pemrograman interpretatif, tingkat tinggi dan mudah dipelajari yang digunakan untuk membangun berbagai jenis aplikasi seperti web, game, desktop, dan mobile. Syntax Dasar Python menggunakan indentasi whitespace untuk menunjukkan blok kode Pernyataan di Python diakhiri dengan titik dua (:) Komentar dimulai dengan tanda pagar (#) Fungsi Fungsi didefinisikan menggunakan kata kunci def dan dapat mengambil argumen</string>
     <string name="log_out">Log out</string>
     <string name="under_construction">Sorry, this feature still under construction</string>
+    <string name="see_more">See more...</string>
 </resources>

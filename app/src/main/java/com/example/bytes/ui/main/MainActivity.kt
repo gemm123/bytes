@@ -1,14 +1,17 @@
 package com.example.bytes.ui.main
 
 import android.os.Bundle
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.bytes.R
 import com.example.bytes.databinding.ActivityMainBinding
+import com.example.bytes.ui.home.course.CourseFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +37,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.navigation_home -> {
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     @Deprecated("Deprecated in Java")

@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.bytes.R
 import com.example.bytes.data.locale.AuthPreference
 import com.example.bytes.data.remote.retrofit.ApiConfig
@@ -19,6 +21,12 @@ class FirstFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: FirstViewModel
     private lateinit var token: String
+    private var courseId = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        courseId = arguments?.getString("CourseId").toString()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +45,21 @@ class FirstFragment : Fragment() {
 
     private fun setupAction() {
         token = "Bearer ${viewModel.getToken()}"
+        setData(courseId, token)
+    }
+
+    private fun setData(courseId: String, token: String) {
+        viewModel.getMaterial(courseId, token).observe(requireActivity()) { material ->
+            val data = material.data
+            val url = "http://103.67.186.184:8080"
+            with(binding) {
+                tvMaterial1Title.text = data.title
+                tvMaterial1.text = data.text
+                Glide.with(requireActivity())
+                    .load(url + data.image)
+                    .into(ivCourseBanner)
+            }
+        }
     }
 
     private fun setupViewModel() {

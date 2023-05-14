@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
 
     private fun setupViewModel() {
         val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
     }
 
     override fun onDestroyView() {

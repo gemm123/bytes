@@ -32,16 +32,37 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/tv_summary"
+                android:id="@+id/tv_summary1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sample_summary"
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/inter_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_summary_title"/>
+
+            <TextView
+                android:id="@+id/tv_summary2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_summary1"/>
+
+            <TextView
+                android:id="@+id/tv_summary3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_summary2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

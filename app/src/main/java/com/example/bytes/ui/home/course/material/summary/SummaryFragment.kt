@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.bytes.R
 import com.example.bytes.data.locale.AuthPreference
@@ -22,6 +23,12 @@ class SummaryFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: SummaryViewModel
     private lateinit var token: String
+    private var courseId = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        courseId = arguments?.getString("CourseId").toString()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,11 +48,21 @@ class SummaryFragment : Fragment() {
 
     private fun setupAction() {
         token = "Bearer ${viewModel.getToken()}"
+        setData(courseId, token)
         binding.btnEnd.setOnClickListener {
-            val intent = Intent(requireActivity(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finishAffinity()
             requireActivity().finish()
+        }
+    }
+
+    private fun setData(courseId: String, token: String) {
+        viewModel.getSummary(courseId, token).observe(requireActivity()) { summaryResponse ->
+            val summaries = summaryResponse.data.text
+            val summary = summaries.split(";")
+            with(binding) {
+                tvSummary1.text = summary[0]
+                tvSummary2.text = summary[1]
+                tvSummary3.text = summary[2]
+            }
         }
     }
 

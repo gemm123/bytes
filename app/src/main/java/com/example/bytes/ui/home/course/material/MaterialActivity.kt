@@ -4,13 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bytes.databinding.ActivityMaterialBinding
+import com.example.bytes.ui.home.course.material.first.FirstFragment
+import com.example.bytes.ui.home.course.material.quiz.QuizFragment
+import com.example.bytes.ui.home.course.material.summary.SummaryFragment
 import com.example.bytes.ui.main.MainActivity
 
 class MaterialActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMaterialBinding
+    private lateinit var storyId: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -22,15 +28,15 @@ class MaterialActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.btnClose.setOnClickListener {
-            val intent = Intent(this@MaterialActivity, MainActivity::class.java)
-            startActivity(intent)
-            finishAffinity()
             finish()
         }
     }
 
     private fun setupViewPager() {
-        val sectionPagerAdapter = SectionPagerAdapter(this@MaterialActivity)
+        val bundle = Bundle()
+        storyId = intent.getStringExtra("EXTRA_ID").toString()
+        bundle.putString("CourseId", storyId)
+        val sectionPagerAdapter = SectionPagerAdapter(supportFragmentManager, lifecycle, bundle)
         binding.viewPager.adapter = sectionPagerAdapter
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

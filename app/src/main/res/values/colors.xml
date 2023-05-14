@@ -10,4 +10,9 @@
     <color name="main_color">#4285F4</color>
     <color name="gray">#F5F5F5</color>
     <color name="status_bar">#434343</color>
+    <color name="web">#5CB6FF</color>
+    <color name="mobile">#B27AFB</color>
+    <color name="data">#FBB44D</color>
+    <color name="correct">#48FF00</color>
+    <color name="wrong">#FF1A1A</color>
 </resources>

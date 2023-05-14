@@ -35,7 +35,6 @@
                 android:id="@+id/tv_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sample_question"
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="12dp"
@@ -58,26 +57,26 @@
                     android:id="@+id/answer_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sample_answer_1"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:button="@null"
+                    android:padding="4dp"
                     android:fontFamily="@font/inter_regular"
-                    android:background="@drawable/answer_radio_button"/>
+                    android:background="@drawable/gray_rounded_corner"/>
 
                 <RadioButton
                     android:id="@+id/answer_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sample_answer_2"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:button="@null"
                     android:layout_marginTop="8dp"
+                    android:padding="4dp"
                     android:fontFamily="@font/inter_regular"
-                    android:background="@drawable/answer_radio_button"/>
+                    android:background="@drawable/gray_rounded_corner"/>
 
             </RadioGroup>
 
