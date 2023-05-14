@@ -1,4 +1,4 @@
-# bytes
+# Bytes-API
 
 ## Daftar isi
 
