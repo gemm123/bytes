@@ -6,3 +6,8 @@
 
 # Arsitektur dan Tech Stack
 ![Arsitektur Bytes](https://github.com/gemm123/bytes/blob/master/Arsitektur%20Bytes.png)
+
+# Branch
+* `backend`: https://github.com/gemm123/bytes/tree/backend
+* `bobile`: https://github.com/gemm123/bytes/tree/mobile
+* `machine-learning`: https://github.com/gemm123/bytes/tree/machine-learning
