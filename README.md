@@ -9,5 +9,5 @@
 
 # Branch
 * `backend`: https://github.com/gemm123/bytes/tree/backend
-* `bobile`: https://github.com/gemm123/bytes/tree/mobile
+* `mobile`: https://github.com/gemm123/bytes/tree/mobile
 * `machine-learning`: https://github.com/gemm123/bytes/tree/machine-learning
