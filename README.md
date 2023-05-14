@@ -124,7 +124,7 @@ Berikut merupakan dokumentasi API yang telah dibuat:
 | POST   | /auth/login                | Login user                |
 | Get    | /auth/user                 | Get user info             |
 | POST   | /like/:courseid            | Like course               |
-| DELETE | /like/:courseid            | Unline course             |
+| DELETE | /like/:courseid            | Unlike course             |
 | GET    | /course                    | Get recommendation course |
 | GET    | /course/material/:courseid | Get material course       |
 | GET    | /course/quiz/:courseid     | Get quiz course           |
